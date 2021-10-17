@@ -33,8 +33,8 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.
 Route::resource('categories', CategoryController::class);
 Route::resource('tags', TagController::class);
 
-Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
-Route::post('/contact', [MessageController::class, 'store']);
+Route::get('/contactus', [PagesController::class, 'contact'])->name('contact');
+Route::post('/contactus', [MessageController::class, 'store']);
 
 Route::get('/about', [PagesController::class, 'about']);
 
@@ -48,7 +48,7 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // });
 
 Route::get('/lang/{locale}', function ($locale) {
-    if (! in_array($locale, ['en', 'ar'])) {
+    if (!in_array($locale, ['en', 'ar'])) {
         return redirect()->back()->with('error', 'this lang is not supported');
     }
 
