@@ -33,8 +33,8 @@ Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.
 Route::resource('categories', CategoryController::class);
 Route::resource('tags', TagController::class);
 
-Route::get('/contactus', [PagesController::class, 'contact'])->name('contact');
-Route::post('/contactus', [MessageController::class, 'store']);
+Route::get('/contact', [PagesController::class, 'contact'])->name('contact');
+Route::post('/contact', [MessageController::class, 'store']);
 
 Route::get('/about', [PagesController::class, 'about']);
 
